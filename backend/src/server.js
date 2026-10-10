@@ -30,6 +30,10 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/cart', cartRoutes);
 
 // Health check
+app.get('/', (req, res) => {
+  res.json({ status: 'OK', message: 'E-Commerce API is running' });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'E-Commerce API is running' });
 });
